@@ -261,7 +261,13 @@ main {
     background-color: #2b2e43;
     display: grid;
     grid-template-columns: repeat(4, 267px);
+    justify-content: space-around;
     padding: 20px;
+    height: 518px;
+}
+
+.data_type .backlog{
+    overflow: auto;
 }
 
 .data_type header {
@@ -288,20 +294,21 @@ main {
 .data_type main {
     background-color: #313447;
     padding: 20px;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 .data_type .project_1 {
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
-    width: 100%;
-    display: block;
-    /* grid-template-columns: repeat(2, 1fr); */
+    margin-top: 10px;
+    display: grid !important;
+    grid-template-columns: 1fr 10px;
 }
 
 .data_type main .project_1 h3,
 i {
-    padding: 10px;
     font-weight: 500;
     font-size: 13px;
     color: #444;
@@ -314,4 +321,19 @@ i {
 .data_type main .project_1 p {
     font-size: 11px;
     color: #848691;
+ }
+
+
+ @media (max-width: 600px) {
+    .data_type{
+        grid-template-columns: 267px;
+        grid-template-rows: repeat(4, auto);
+        gap: 20px;
+        height: 100%;
+    }
+
+    .data_type .backlog{
+        height: 280px;
+    }
+
  }
