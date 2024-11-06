@@ -109,7 +109,7 @@ main {
 /* right nav grid edits */
 .right_buttons_section {
     width: 8.438em;
-    height: 100vh;
+    height: 1fr;
     background-color: #191c2e;
     display: grid;
     grid-template-columns: 45px;
@@ -158,6 +158,10 @@ main {
     font-weight: 100;
 }
 
+.right_buttons_section .up_button_for_tablet{
+    display: none;
+}
+
 /* .right_buttons_section responsiv edits here */
 @media (max-width: 600px) {
     main {
@@ -165,7 +169,7 @@ main {
     }
 
     .right_buttons_section {
-        grid-template-columns: repeat(4, 45px);
+        grid-template-columns: repeat(4, 45px) 1fr;
         grid-template-rows: 100px;
         width: auto;
         height: auto;
@@ -175,6 +179,10 @@ main {
     .right_buttons_section .task_icon_text i {
         font-size: 34px;
     }
+
+    .right_buttons_section .up_button_for_tablet{
+        display: none;
+    }
 }
 
 
@@ -183,8 +191,6 @@ main {
 
 .bottom_body_navigation_bar {
     padding: 20px;
-    width: auto;
-    height: 55px;
     background-color: #191c2e;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -263,11 +269,12 @@ main {
     grid-template-columns: repeat(4, 267px);
     justify-content: space-around;
     padding: 20px;
-    height: 518px;
+    height: 1fr;
 }
 
-.data_type .backlog{
-    overflow: auto;
+.data_type .backlog {
+    overflow: auto !important;
+    height: 480px;
 }
 
 .data_type header {
@@ -314,26 +321,78 @@ i {
     color: #444;
 }
 
-.data_type main .project_1 i{
+.data_type main .project_1 i {
     justify-self: end;
 }
 
 .data_type main .project_1 p {
     font-size: 11px;
     color: #848691;
- }
+}
 
 
- @media (max-width: 600px) {
-    .data_type{
+@media (max-width: 600px) {
+    .data_type {
         grid-template-columns: 267px;
         grid-template-rows: repeat(4, auto);
         gap: 20px;
         height: 100%;
     }
 
-    .data_type .backlog{
+    .data_type .backlog {
         height: 280px;
     }
 
- }
+}
+
+
+
+
+
+
+/* Responsive for tablet edits here*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+    .top_header_navigation_bar {
+        grid-template-columns: auto;
+    }
+
+    .top_header_navigation_bar .search_bar {
+        display: none;
+    }
+
+    .right_buttons_section {
+        grid-template-rows: repeat(4, 70px) 1fr;
+        align-content: start;
+        padding-top: 80px;
+    }
+
+    .right_buttons_section .up_button_for_tablet{
+        display: grid;
+        justify-content: center;
+        align-content: end;
+        margin-bottom: 50px;
+    }
+    
+    .right_buttons_section .up_button_for_tablet i{
+        background-color: rgba(65, 60, 60, 0.35);
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 50%;
+    }
+
+    .bottom_body_navigation_bar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .data_type {
+        grid-template-columns: 100%;
+        padding: 15px;
+        gap: 10px;
+        height: auto;
+    }
+
+    .data_type .backlog{
+        height: 259.8px;
+    }
+}
